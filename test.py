@@ -19,7 +19,7 @@ def test_play():
     client = '128'
     port = '0'
     # filename = "/home/pkiller/Downloads/v0/K001.MID"
-    filename = "/home/pkiller/Desktop/b.MID"
+    filename = '/home/pkiller/tmp/MIDI资源整理合集(共9673个)/【歌曲类】几千首国内外精品老歌/CLASSIC/MOZART.MID'
     pattern = midi.read_midifile(filename)
 
     hardware = sequencer.SequencerHardware()
@@ -37,16 +37,10 @@ def test_play():
     events = []
     for track in pattern:
         for event in track:
-            if event.statusmsg == 0xFF and event.metacommand == 0x59:
-                if event.data[0] != 0:
-                    print(123)
-
-            if event.statusmsg == 0xB0:
-                pass
-            if event.statusmsg == 0xC0:
-                print instrument_name_of(event.data[0])
-            show_track(event)
+            if event.statusmsg == 0x90 or event.statusmsg == 0x80:
+                event.pitch += 0
             events.append(event)
+
     events.sort()
     seq.start_sequencer()
     for event in events:

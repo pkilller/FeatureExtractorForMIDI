@@ -2,3 +2,10 @@
 
 Feature Extractor For MIDI
 
+
+# Major
+....
+
+# Minor
+....
+

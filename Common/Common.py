@@ -13,7 +13,7 @@ def md5(content):
 
 def __gen_cache_path(group, id):
     file_name = group + '_' + md5(id)
-    return '/media/pkiller/Data1/FeatureExtractorForMIDI_cache/%s' % file_name
+    return '/home/pkiller/tmp/FeatureExtractorForMIDI_cache/%s' % file_name
 
 """
 def check_cache(group, id):
